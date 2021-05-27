@@ -5,7 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "passing env file",
+            "name": "passing env file zum",
+            "type": "python",
+            "request": "launch",
+            "envFile": "${workspaceFolder}/.env",
+            "args": [
+                "zum",
+                "aloooo universo"
+            ],
+            "module": "logger_es_cli"
+        },
+        {
+            "name": "passing env file start_system",
             "type": "python",
             "request": "launch",
             "envFile": "${workspaceFolder}/.env",
