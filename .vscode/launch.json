@@ -5,15 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Module",
+            "name": "passing env file",
             "type": "python",
             "request": "launch",
+            "envFile": "${workspaceFolder}/.env",
             "args": [
-                "--exclude",
-                "pathname,exc_info,exc_text,thread,threadName,stack_info,filename,processName,process,args,msg,name,levelname"
+                "start_system",
+                "aloooo universo"
             ],
             "module": "logger_es_cli"
         }
     ]
 }
-

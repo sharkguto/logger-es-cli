@@ -9,4 +9,5 @@ from logger_es_cli.cli_driver import app
 
 
 if __name__ == "__main__":
-    app()
+    app(prog_name="logger-es-cli")
+    # app()

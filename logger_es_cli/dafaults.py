@@ -9,6 +9,15 @@
 # import typer
 
 
+from enum import Enum
+
+
+class EnvironmentEnum(str, Enum):
+    dev = "DEVELOPMENT"
+    prd = "PRODUCTION"
+    uat = "HOMOLOGATION"
+
+
 # class CustomerBase(BaseModel):
 #     kibana_server: str = typer.Argument("127.0.0.1", envvar="KIBANA_SERVER")
 
@@ -34,4 +43,3 @@
 #             return result
 #         return wrapper
 #     return decorator
-

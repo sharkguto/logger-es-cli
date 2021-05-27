@@ -1,14 +1,16 @@
 [tool.poetry]
 name = "logger-es-cli"
-version = "0.1.0"
+version = "0.1.2"
 description = "CLI for sending logging to elasticsearch"
 authors = ["Gustavo Freitas <gustavo@gmf-tech.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-typer = {extras = ["all"], version = "^0.3.2"}
+typer = { extras = ["all"], version = "^0.3.2" }
 elasticsearch = "^7.13.0"
-cmreshandler = {git = "https://github.com/sharkguto/python-elasticsearch-logger"}
+cmreshandler = { git = "https://github.com/sharkguto/python-elasticsearch-logger" }
+ujson = "^4.0.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
@@ -16,3 +18,6 @@ pytest = "^5.2"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+logger-es-cli = "logger_es_cli.cli_driver:app"
