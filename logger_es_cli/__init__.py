@@ -68,7 +68,7 @@ def logger_factory(
             "levelname",
         ]
 
-    exclude = tuple(exclude)
+    exclude_tuple = tuple(set(exclude))
 
     if enable_file_log:
 
@@ -118,18 +118,24 @@ def logger_factory(
                 kibana_config["kibana_password"],
             ),
             use_ssl=kibana_config["kibana_ssl"],
-            disabled_fields=exclude,
+            disabled_fields=exclude_tuple,
             verify_ssl=False,  # deixar como true em produção, com a ponte, false
             es_index_name=project_name,
             es_additional_fields={
-                "project": f"{project_name}",
-                "environment": f"{environment}",
+                "project": project_name,
+                "environment": environment,
             },
         )
 
         handler_es.setFormatter(formatter)
         handlers.add(handler_es)
 
+    load_handlers()
+
+    return logger
+
+
+def load_handlers():
     for i_handler in handlers:
         if not i_handler in logger.handlers:
             logger.addHandler(i_handler)
