@@ -26,7 +26,7 @@ def start_system(
     message: str,
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
     custom_file: Optional[typer.FileText] = typer.Option(None, envvar="CUSTOM_FILE"),
-    kibana_ssl: bool = typer.Argument(True, envvar="KIBANA_SSL"),
+    kibana_ssl: bool = typer.Option(True, envvar="KIBANA_SSL"),
     exclude: str = typer.Option("", envvar="EXCLUDE"),
     save_filepath: str = typer.Option("/tmp", envvar="SAVE_FILEPATH"),
     save_file: bool = typer.Option(False, envvar="SAVE_FILE"),

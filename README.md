@@ -16,6 +16,12 @@ CLI for sending logging to elasticsearch (alpha version)
   poetry build
   ```
 
+## python-dotenv optional
+
+```bash
+sudo python3 -m pip install python-dotenv[cli]
+```
+
 ## Access AWS ES with VPC access using a tunning ssh
 
 - open a terminal and issue the following command:
@@ -71,6 +77,11 @@ example:
 ```bash
 poetry export -f requirements.txt --output requirements.txt
 ```
+
+## run package
+
+```bash
+
 
 ## License
 
