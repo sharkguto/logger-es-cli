@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logger-es-cli"
-version = "0.2.1"
+version = "0.2.2"
 description = "CLI for sending logging to elasticsearch"
 authors = ["Gustavo Freitas <gustavo@gmf-tech.com>"]
 readme = "README.md"
