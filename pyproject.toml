@@ -6,6 +6,7 @@ authors = ["Gustavo Freitas <gustavo@gmf-tech.com>"]
 readme = "README.md"
 license = "MIT"
 maintainers = ["Gustavo Freitas <gustavo@gmf-tech.com>"]
+keywords = ['elasticsearch', 'kibana', 'logging', 'cli', 'gmf-tech']
 
 [tool.poetry.dependencies]
 python = "^3.8"
