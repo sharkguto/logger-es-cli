@@ -10,17 +10,18 @@ CLI for sending logging to elasticsearch (alpha version)
   sudo python3 -m pip install poetry
   ```
 
+- optional
+
+  ```bash
+  sudo python3 -m pip install git+https://github.com/sharkguto/python-elasticsearch-logger
+  sudo python3 -m pip install python-dotenv[cli]
+  ```
+
 - run build command
 
   ```bash
   poetry build
   ```
-
-## python-dotenv optional
-
-```bash
-sudo python3 -m pip install python-dotenv[cli]
-```
 
 ## Access AWS ES with VPC access using a tunning ssh
 
