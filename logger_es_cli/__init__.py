@@ -2,7 +2,6 @@ __version__ = "0.1.0"
 
 from logging import handlers
 import socket
-import time
 import logging
 from logging.handlers import RotatingFileHandler
 import os, sys
@@ -139,5 +138,3 @@ def load_handlers():
     for i_handler in handlers:
         if not i_handler in logger.handlers:
             logger.addHandler(i_handler)
-
-

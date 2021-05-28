@@ -6,6 +6,7 @@
 # @Link   :
 
 from logger_es_cli.cli_driver import app
+import sys
 
 
 def main():
@@ -13,4 +14,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

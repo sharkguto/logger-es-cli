@@ -7,10 +7,8 @@
 # from logger_es_cli.dafaults import decorator_factory
 from typing import Optional
 import typer
-import os
 from logger_es_cli import logger_factory, logger
 import sys
-import time
 import ujson as json
 
 app = typer.Typer()
@@ -24,7 +22,7 @@ def configure(type_config: str = "env"):
     typer.echo(f"{type_config}")
 
 
-@app.command("ERROR")
+@app.command("error")
 def log_error(
     message: str,
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
@@ -66,17 +64,14 @@ def log_error(
         project_name=project_name,
     )
 
-    logger.info(message, extra=extra_args)
-    logger.warning(message, extra=extra_args)
-    logger.debug(message, extra=extra_args)
     logger.error(message, extra=extra_args)
 
     typer.echo(
-        f"send message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
+        f"send ERROR message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
     )
 
 
-@app.command("WARNING")
+@app.command("warning")
 def log_warning(
     message: str,
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
@@ -118,17 +113,14 @@ def log_warning(
         project_name=project_name,
     )
 
-    logger.info(message, extra=extra_args)
     logger.warning(message, extra=extra_args)
-    logger.debug(message, extra=extra_args)
-    logger.error(message, extra=extra_args)
 
     typer.echo(
-        f"send message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
+        f"send WARNING message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
     )
 
 
-@app.command("DEBUG")
+@app.command("debug")
 def log_debug(
     message: str,
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
@@ -170,17 +162,14 @@ def log_debug(
         project_name=project_name,
     )
 
-    logger.info(message, extra=extra_args)
-    logger.warning(message, extra=extra_args)
     logger.debug(message, extra=extra_args)
-    logger.error(message, extra=extra_args)
 
     typer.echo(
-        f"send message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
+        f"send DEBUG message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
     )
 
 
-@app.command("INFO")
+@app.command("info")
 def log_info(
     message: str,
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
@@ -223,16 +212,13 @@ def log_info(
     )
 
     logger.info(message, extra=extra_args)
-    logger.warning(message, extra=extra_args)
-    logger.debug(message, extra=extra_args)
-    logger.error(message, extra=extra_args)
 
     typer.echo(
-        f"send message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
+        f"send INFO message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
     )
 
 
-@app.command("CRITICAL")
+@app.command("critical")
 def log_critical(
     message: str,
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
@@ -274,11 +260,8 @@ def log_critical(
         project_name=project_name,
     )
 
-    logger.info(message, extra=extra_args)
-    logger.warning(message, extra=extra_args)
-    logger.debug(message, extra=extra_args)
-    logger.error(message, extra=extra_args)
+    logger.critical(message, extra=extra_args)
 
     typer.echo(
-        f"send message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
+        f"send CRITICAL message to kibana:  [{message} {kibana_server}:{kibana_server_port}]!"
     )

@@ -78,6 +78,14 @@ example:
 poetry export -f requirements.txt --output requirements.txt
 ```
 
+## run logger-es-cli with a .env file [dotenv dependence]
+
+```bash
+dotenv run -- logger-es-cli info 'alo mundo louco!!!'
+```
+
+- Do not forget to issue command message with single quote. In bash if you send with double quotes, escape caracters will broken the CLI
+
 ## License
 
 This project is licensed under the terms of the MIT license.
