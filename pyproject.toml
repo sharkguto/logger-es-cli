@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "logger-es-cli"
-version = "0.3.0"
+version = "0.3.1"
 description = "CLI for sending logging to elasticsearch"
 authors = ["Gustavo Freitas <gustavo@gmf-tech.com>"]
 readme = "README.md"
@@ -12,9 +12,9 @@ keywords = ['elasticsearch', 'kibana', 'logging', 'cli', 'gmf-tech']
 python = "^3.8"
 typer = { extras = ["all"], version = "^0.3.2" }
 elasticsearch = "^7.13.0"
-cmreshandler = { git = "https://github.com/sharkguto/python-elasticsearch-logger" }
 ujson = "^4.0.2"
 python-dotenv = { extras = ["cli"], version = "^0.17.1" }
+logger-es-handler = {git = "https://github.com/sharkguto/python-elasticsearch-logger"}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

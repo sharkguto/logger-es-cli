@@ -61,7 +61,7 @@ def log_error(
         kibana_config=kibana_config,
         enable_file_log=save_file,
         path_log_file=save_filepath,
-        environment=environment,
+        environment=environment.upper(),
         project_name=project_name,
         send_debug=send_debug,
     )

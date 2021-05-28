@@ -5,11 +5,10 @@ import socket
 import logging
 from logging.handlers import RotatingFileHandler
 import os, sys
-from cmreslogging.handlers import CMRESHandler
+from logger_es_handler.handlers import ESHandler
 
 handlers = set()
 
-#logging.basicConfig(level=logging.NOTSET)
 
 class MyFilter(logging.Filter):
     def __init__(self, param=None):
@@ -106,21 +105,21 @@ def logger_factory(
         formatter = logging.Formatter(
             "[%(levelname)s] %(asctime)s %(funcName)s %(message)s"
         )
-        handler_es = CMRESHandler(
+        handler_es = ESHandler(
             hosts=[
                 {
                     "host": kibana_config["kibana_server"],
                     "port": kibana_config["kibana_server_port"],
                 }
             ],
-            auth_type=CMRESHandler.AuthType.BASIC_AUTH,
+            auth_type=ESHandler.AuthType.BASIC_AUTH,
             auth_details=(
                 kibana_config["kibana_username"],
                 kibana_config["kibana_password"],
             ),
             use_ssl=kibana_config["kibana_ssl"],
             disabled_fields=exclude_tuple,
-            verify_ssl=False,  # deixar como true em produção, com a ponte, false
+            verify_ssl=False if not environment == "PRODUCTION" else True,
             es_index_name=project_name,
             es_additional_fields={
                 "project": project_name,
