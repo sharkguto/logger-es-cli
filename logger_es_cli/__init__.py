@@ -9,6 +9,7 @@ from cmreslogging.handlers import CMRESHandler
 
 handlers = set()
 
+#logging.basicConfig(level=logging.NOTSET)
 
 class MyFilter(logging.Filter):
     def __init__(self, param=None):
@@ -43,9 +44,10 @@ def logger_factory(
     enable_console_log=True,
     enable_file_log=False,
     enable_es_log=True,
-    disable_es_fields=(),
+    send_debug=False,
     exclude_default=True,
 ):
+
     if exclude:
         exclude = exclude.split(",")
     else:
@@ -127,6 +129,10 @@ def logger_factory(
         )
 
         handler_es.setFormatter(formatter)
+        if send_debug:
+            handler_es.setLevel(logging.DEBUG)
+        else:
+            handler_es.setLevel(logging.INFO)
         handlers.add(handler_es)
 
     load_handlers()

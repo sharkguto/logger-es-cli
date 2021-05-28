@@ -25,6 +25,7 @@ def configure(type_config: str = "env"):
 @app.command("error")
 def log_error(
     message: str,
+    send_debug: bool = typer.Option(False, envvar="SEND_DEBUG"),
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
     custom_file: Optional[typer.FileText] = typer.Option(None, envvar="CUSTOM_FILE"),
     kibana_ssl: bool = typer.Option(True, envvar="KIBANA_SSL"),
@@ -62,6 +63,7 @@ def log_error(
         path_log_file=save_filepath,
         environment=environment,
         project_name=project_name,
+        send_debug=send_debug,
     )
 
     logger.error(message, extra=extra_args)
@@ -74,6 +76,7 @@ def log_error(
 @app.command("warning")
 def log_warning(
     message: str,
+    send_debug: bool = typer.Option(False, envvar="SEND_DEBUG"),
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
     custom_file: Optional[typer.FileText] = typer.Option(None, envvar="CUSTOM_FILE"),
     kibana_ssl: bool = typer.Option(True, envvar="KIBANA_SSL"),
@@ -111,6 +114,7 @@ def log_warning(
         path_log_file=save_filepath,
         environment=environment,
         project_name=project_name,
+        send_debug=send_debug,
     )
 
     logger.warning(message, extra=extra_args)
@@ -123,6 +127,7 @@ def log_warning(
 @app.command("debug")
 def log_debug(
     message: str,
+    send_debug: bool = typer.Option(False, envvar="SEND_DEBUG"),
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
     custom_file: Optional[typer.FileText] = typer.Option(None, envvar="CUSTOM_FILE"),
     kibana_ssl: bool = typer.Option(True, envvar="KIBANA_SSL"),
@@ -160,6 +165,7 @@ def log_debug(
         path_log_file=save_filepath,
         environment=environment,
         project_name=project_name,
+        send_debug=send_debug,
     )
 
     logger.debug(message, extra=extra_args)
@@ -172,6 +178,7 @@ def log_debug(
 @app.command("info")
 def log_info(
     message: str,
+    send_debug: bool = typer.Option(False, envvar="SEND_DEBUG"),
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
     custom_file: Optional[typer.FileText] = typer.Option(None, envvar="CUSTOM_FILE"),
     kibana_ssl: bool = typer.Option(True, envvar="KIBANA_SSL"),
@@ -209,6 +216,7 @@ def log_info(
         path_log_file=save_filepath,
         environment=environment,
         project_name=project_name,
+        send_debug=send_debug,
     )
 
     logger.info(message, extra=extra_args)
@@ -221,6 +229,7 @@ def log_info(
 @app.command("critical")
 def log_critical(
     message: str,
+    send_debug: bool = typer.Option(False, envvar="SEND_DEBUG"),
     exclude_default: bool = typer.Option(True, envvar="EXCLUDE_DEFAULT"),
     custom_file: Optional[typer.FileText] = typer.Option(None, envvar="CUSTOM_FILE"),
     kibana_ssl: bool = typer.Option(True, envvar="KIBANA_SSL"),
@@ -258,6 +267,7 @@ def log_critical(
         path_log_file=save_filepath,
         environment=environment,
         project_name=project_name,
+        send_debug=send_debug,
     )
 
     logger.critical(message, extra=extra_args)

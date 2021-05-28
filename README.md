@@ -60,6 +60,10 @@ PROJECT_NAME=gmf-tech-modulex
 EXCLUDE=thread,threadName,processName
 # a custom json file , to append when send logs to elasticsearch
 CUSTOM_FILE=/run/media/gustavo/backup/git-projects/logger-es-cli/custom.json
+# unbuffer sysout python
+PYTHONUNBUFFERED=true
+# send debug logs to es?
+SEND_DEBUG=false
 ```
 
 ## custom.json file
