@@ -14,7 +14,8 @@ typer = { extras = ["all"], version = "^0.3.2" }
 elasticsearch = "^7.13.0"
 ujson = "^4.0.2"
 python-dotenv = { extras = ["cli"], version = "^0.17.1" }
-logger-es-handler = {git = "https://github.com/sharkguto/python-elasticsearch-logger"}
+logger-es-handler = "^0.1.0"
+
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
