@@ -21,7 +21,7 @@
             "request": "launch",
             "envFile": "${workspaceFolder}/.env",
             "args": [
-                "start_system",
+                "info",
                 "aloooo universo"
             ],
             "module": "logger_es_cli"

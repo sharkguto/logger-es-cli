@@ -78,11 +78,6 @@ example:
 poetry export -f requirements.txt --output requirements.txt
 ```
 
-## run package
-
-```bash
-
-
 ## License
 
 This project is licensed under the terms of the MIT license.
