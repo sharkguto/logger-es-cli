@@ -22,7 +22,7 @@ tests_no_zope = ["coverage[toml] (>=5.0.2)", "hypothesis", "pympler", "pytest (>
 
 [[package]]
 name = "certifi"
-version = "2020.12.5"
+version = "2021.5.30"
 description = "Python package for providing Mozilla's CA Bundle."
 category = "main"
 optional = false
@@ -110,8 +110,8 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "logger-es-handler"
-version = "0.1.0"
-description = "ES handler derivated from "
+version = "0.1.1"
+description = "ES handler for logging module "
 category = "main"
 optional = false
 python-versions = ">=3.8,<4.0"
@@ -351,8 +351,8 @@ attrs = [
     {file = "attrs-21.2.0.tar.gz", hash = "sha256:ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb"},
 ]
 certifi = [
-    {file = "certifi-2020.12.5-py2.py3-none-any.whl", hash = "sha256:719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"},
-    {file = "certifi-2020.12.5.tar.gz", hash = "sha256:1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c"},
+    {file = "certifi-2021.5.30-py2.py3-none-any.whl", hash = "sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8"},
+    {file = "certifi-2021.5.30.tar.gz", hash = "sha256:2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee"},
 ]
 cffi = [
     {file = "cffi-1.14.5-cp27-cp27m-macosx_10_9_x86_64.whl", hash = "sha256:bb89f306e5da99f4d922728ddcd6f7fcebb3241fc40edebcb7284d7514741991"},
@@ -440,8 +440,8 @@ idna = [
     {file = "idna-2.10.tar.gz", hash = "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6"},
 ]
 logger-es-handler = [
-    {file = "logger-es-handler-0.1.0.tar.gz", hash = "sha256:0f26a31a3a03bff122c99997e3f83e0a471e394b8a6f4d522dd16e48e525d105"},
-    {file = "logger_es_handler-0.1.0-py3-none-any.whl", hash = "sha256:c9bc4fddd5f7283428f323ea5ccdcf4c68c7297d1bdaa51dddcf3a7743ac3139"},
+    {file = "logger-es-handler-0.1.1.tar.gz", hash = "sha256:b7178645d18e1bd0dfefad11af5022dfd1e911dab0a7c2696da95abeb572fe39"},
+    {file = "logger_es_handler-0.1.1-py3-none-any.whl", hash = "sha256:ed4f9d64f345a61ec3e364a85e9235b222e20d8ea22a0371698913ee6b5f4385"},
 ]
 more-itertools = [
     {file = "more-itertools-8.8.0.tar.gz", hash = "sha256:83f0308e05477c68f56ea3a888172c78ed5d5b3c282addb67508e7ba6c8f813a"},
