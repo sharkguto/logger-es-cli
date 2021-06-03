@@ -13,7 +13,7 @@ CLI for sending logging to elasticsearch (alpha version)
 - optional
 
   ```bash
-  sudo python3 -m pip install git+https://github.com/sharkguto/python-elasticsearch-logger
+  sudo yum install redhat-rpm-config gcc libffi-devel python3-devel openssl-devel cargo
   sudo python3 -m pip install python-dotenv[cli]
   ```
 
